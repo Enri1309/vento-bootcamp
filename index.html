@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page Kit - Vento Bootcamp</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <style>
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--spacing-xl);
+      margin-top: var(--spacing-2xl);
+    }
+
+    .template-card {
+      background: var(--white);
+      border: 2px solid var(--light);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      transition: all var(--transition-base);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .template-card:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .template-icon {
+      font-size: 3rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .template-title {
+      font-size: var(--text-xl);
+      margin-bottom: var(--spacing-sm);
+      color: var(--dark);
+    }
+
+    .template-description {
+      color: var(--gray);
+      margin-bottom: var(--spacing-lg);
+      flex-grow: 1;
+    }
+
+    .component-list {
+      background: var(--light);
+      padding: var(--spacing-xl);
+      border-radius: var(--radius-lg);
+    }
+
+    .component-list h3 {
+      color: var(--dark);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .component-list ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--spacing-sm);
+    }
+
+    .component-list li {
+      padding: var(--spacing-sm);
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      font-size: var(--text-sm);
+    }
+
+    .component-list li::before {
+      content: "✓ ";
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .hero-welcome {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: var(--white);
+      padding: 6rem 0 4rem;
+      text-align: center;
+    }
+
+    .hero-welcome h1 {
+      color: var(--white);
+      font-size: var(--text-5xl);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .hero-welcome p {
+      color: rgba(255, 255, 255, 0.95);
+      font-size: var(--text-xl);
+      max-width: 700px;
+      margin: 0 auto var(--spacing-xl);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .quick-start {
+      background: var(--white);
+      border-left: 4px solid var(--primary-color);
+      padding: var(--spacing-lg);
+      margin: var(--spacing-xl) 0;
+      border-radius: var(--radius-md);
+    }
+
+    .quick-start h3 {
+      color: var(--primary-color);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .quick-start ol {
+      margin-left: var(--spacing-lg);
+    }
+
+    .quick-start li {
+      margin-bottom: var(--spacing-sm);
+      color: var(--dark);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO WELCOME -->
+  <div class="hero-welcome">
+    <div class="container">
+      <span class="badge">🚀 Vento Bootcamp</span>
+      <h1>Landing Page Kit</h1>
+      <p>
+        Un kit completo di componenti HTML/CSS/JS per creare landing page professionali in pochi minuti.
+        Componenti modulari, responsive e pronti all'uso.
+      </p>
+      <div class="flex justify-center gap-md" style="margin-top: var(--spacing-xl);">
+        <a href="#templates" class="btn btn-lg" style="background-color: var(--white); color: var(--primary-color);">
+          Esplora i Template
+        </a>
+        <a href="#components" class="btn btn-outline btn-lg" style="border-color: var(--white); color: var(--white);">
+          Vedi Componenti
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK START -->
+  <section class="section">
+    <div class="container">
+      <div class="quick-start">
+        <h3>⚡ Quick Start</h3>
+        <ol>
+          <li>Scegli un template qui sotto o crea la tua landing page da zero</li>
+          <li>Apri il file HTML e personalizza i contenuti</li>
+          <li>Modifica colori e stili in <code>css/variables.css</code></li>
+          <li>Carica il tuo sito su Netlify, Vercel o GitHub Pages</li>
+        </ol>
+        <p style="margin-top: var(--spacing-md); color: var(--gray);">
+          📚 Leggi il <a href="README.md" style="color: var(--primary-color); font-weight: 600;">README.md</a> per la documentazione completa
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMPLATES SECTION -->
+  <section class="section" id="templates" style="background-color: var(--light);">
+    <div class="container">
+      <div class="text-center">
+        <h2>📄 Template Pronti All'Uso</h2>
+        <p class="text-gray">Scegli un template e inizia subito a creare</p>
+      </div>
+
+      <div class="template-grid">
+        <!-- Product Landing -->
+        <div class="template-card">
+          <div class="template-icon">🎯</div>
+          <h3 class="template-title">Product Landing</h3>
+          <p class="template-description">
+            Landing page completa per prodotti SaaS, app e servizi digitali.
+            Include tutte le sezioni: hero, features, testimonianze, pricing, CTA e contatti.
+          </p>
+          <a href="templates/product-landing.html" class="btn btn-primary" style="width: 100%;">
+            Visualizza Template
+          </a>
+        </div>
+
+        <!-- Service Landing -->
+        <div class="template-card">
+          <div class="template-icon">💼</div>
+          <h3 class="template-title">Service Landing</h3>
+          <p class="template-description">
+            Perfetta per agenzie, consulenti e professionisti.
+            Focus sui servizi offerti, portfolio clienti e form di richiesta preventivo.
+          </p>
+          <a href="templates/service-landing.html" class="btn btn-primary" style="width: 100%;">
+            Visualizza Template
+          </a>
+        </div>
+
+        <!-- Event Landing -->
+        <div class="template-card">
+          <div class="template-icon">🎪</div>
+          <h3 class="template-title">Event Landing</h3>
+          <p class="template-description">
+            Ideale per eventi, conferenze e workshop.
+            Include programma, speaker, biglietti e registrazione con countdown.
+          </p>
+          <a href="templates/event-landing.html" class="btn btn-primary" style="width: 100%;">
+            Visualizza Template
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENTS SECTION -->
+  <section class="section" id="components">
+    <div class="container">
+      <div class="text-center">
+        <h2>🧩 Componenti Disponibili</h2>
+        <p class="text-gray">Componenti modulari che puoi combinare a piacimento</p>
+      </div>
+
+      <div class="component-list" style="margin-top: var(--spacing-2xl);">
+        <h3>Tutti i componenti sono nella cartella <code>components/</code></h3>
+        <ul>
+          <li>Navbar (Barra navigazione)</li>
+          <li>Hero Section</li>
+          <li>Features Grid</li>
+          <li>Testimonials</li>
+          <li>Pricing Cards</li>
+          <li>Contact Form</li>
+          <li>Call-to-Action</li>
+          <li>Footer</li>
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-2" style="gap: var(--spacing-xl); margin-top: var(--spacing-2xl);">
+        <div class="card">
+          <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-md);">✨ Caratteristiche</h3>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: var(--spacing-sm);">✓ 100% Responsive</li>
+            <li style="margin-bottom: var(--spacing-sm);">✓ Zero Dipendenze</li>
+            <li style="margin-bottom: var(--spacing-sm);">✓ Componenti Modulari</li>
+            <li style="margin-bottom: var(--spacing-sm);">✓ Facilmente Personalizzabili</li>
+            <li style="margin-bottom: var(--spacing-sm);">✓ SEO Friendly</li>
+            <li style="margin-bottom: var(--spacing-sm);">✓ Accessibile</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 style="color: var(--secondary-color); margin-bottom: var(--spacing-md);">🎨 Personalizzazione</h3>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: var(--spacing-sm);">✓ Variabili CSS per colori</li>
+            <li style="margin-bottom: var(--spacing-sm);">✓ Font personalizzabili</li>
+            <li style="margin-bottom: var(--spacing-sm);">✓ Spacing configurabile</li>
+            <li style="margin-bottom: var(--spacing-sm);">✓ Utility classes pronte</li>
+            <li style="margin-bottom: var(--spacing-sm);">✓ Grid system flessibile</li>
+            <li style="margin-bottom: var(--spacing-sm);">✓ Animazioni incluse</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta">
+    <div class="container">
+      <h2 class="cta-title">Pronto a Creare?</h2>
+      <p class="cta-text">
+        Scegli un template, personalizzalo e lancia il tuo progetto oggi stesso.
+        Tutto il codice è pronto, devi solo aggiungere i tuoi contenuti!
+      </p>
+      <div class="hero-buttons">
+        <a href="templates/product-landing.html" class="btn btn-lg" style="background-color: var(--white); color: var(--primary-color);">
+          Inizia con un Template
+        </a>
+        <a href="README.md" class="btn btn-outline btn-lg" style="border-color: var(--white); color: var(--white);">
+          Leggi la Documentazione
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div style="text-align: center;">
+        <h3 style="color: var(--white); margin-bottom: var(--spacing-md);">Landing Page Kit</h3>
+        <p style="color: var(--gray-light); margin-bottom: var(--spacing-lg);">
+          Un progetto per il Vento Bootcamp<br>
+          Creato con HTML, CSS e JavaScript
+        </p>
+        <div style="margin-bottom: var(--spacing-lg);">
+          <a href="README.md" style="color: var(--gray-light); margin: 0 var(--spacing-md);">Documentazione</a>
+          <a href="templates/product-landing.html" style="color: var(--gray-light); margin: 0 var(--spacing-md);">Template</a>
+          <a href="#components" style="color: var(--gray-light); margin: 0 var(--spacing-md);">Componenti</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Landing Page Kit. Creato per Vento Bootcamp.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
