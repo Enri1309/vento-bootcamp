@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page Kit - Demo Premium</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Variables & Reset */
+    :root {
+      --primary: #3b82f6;
+      --secondary: #8b5cf6;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --gradient-blue: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      --gradient-purple: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      --shadow-primary: 0 10px 30px -5px rgba(59, 130, 246, 0.3);
+      --shadow-secondary: 0 10px 30px -5px rgba(139, 92, 246, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.5;
+      color: var(--dark);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+    }
+
+    .navbar-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: var(--gradient-blue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .navbar-menu {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .navbar-link {
+      font-weight: 500;
+      color: var(--dark);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 0.25rem;
+      transition: color 0.3s;
+    }
+
+    .navbar-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-blue);
+      transition: width 0.3s;
+    }
+
+    .navbar-link:hover {
+      color: var(--primary);
+    }
+
+    .navbar-link:hover::after {
+      width: 100%;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 1.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 0.75rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary {
+      background: var(--gradient-blue);
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-primary);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--white);
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .btn-lg {
+      padding: 1.125rem 2.25rem;
+      font-size: 1.125rem;
+      border-radius: 1rem;
+    }
+
+    .btn-sm {
+      padding: 0.625rem 1.25rem;
+      font-size: 0.875rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 10rem 0 8rem;
+      background: var(--gradient-blue);
+      color: var(--white);
+      margin-top: 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
+      margin-bottom: 3rem;
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.625;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 0.8s ease-out 0.2s;
+      animation-fill-mode: backwards;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease-out 0.4s;
+      animation-fill-mode: backwards;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 8rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: var(--gradient-blue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      font-size: 1.25rem;
+      color: var(--gray);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 3rem;
+    }
+
+    .feature-card {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: var(--white);
+      border-radius: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(15, 23, 42, 0.05);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-12px);
+      box-shadow: var(--shadow-2xl);
+      border-color: rgba(59, 130, 246, 0.2);
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      background: var(--gradient-purple);
+      border-radius: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      box-shadow: var(--shadow-secondary);
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 15px 40px -10px rgba(139, 92, 246, 0.5);
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .feature-description {
+      color: var(--gray);
+      line-height: 1.625;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: var(--gradient-blue);
+      color: var(--white);
+      padding: 8rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-title {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.25;
+    }
+
+    .cta-text {
+      font-size: clamp(1.125rem, 2vw, 1.375rem);
+      margin-bottom: 3rem;
+      color: rgba(255, 255, 255, 0.95);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.625;
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: var(--white);
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      margin-bottom: 2rem;
+    }
+
+    .footer-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-text {
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      color: #cbd5e1;
+      font-size: 0.875rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .navbar-menu {
+        display: none;
+      }
+
+      .hero {
+        padding: 6rem 0 4rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .features {
+        padding: 4rem 0;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .cta {
+        padding: 4rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-container">
+        <div class="navbar-logo">VentoKit</div>
+        <ul class="navbar-menu">
+          <li><a href="#home" class="navbar-link">Home</a></li>
+          <li><a href="#features" class="navbar-link">Features</a></li>
+          <li><a href="#cta" class="navbar-link">Demo</a></li>
+        </ul>
+        <button class="btn btn-primary btn-sm">Inizia</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Landing Page Kit Premium
+        </h1>
+        <p class="hero-subtitle">
+          Un sistema completo di componenti HTML/CSS/JS per creare landing page professionali.
+          Design moderno, animazioni fluide, gradienti premium.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary btn-lg">
+            Scarica Gratis
+          </button>
+          <button class="btn btn-outline btn-lg">
+            Vedi Demo
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Design Premium & Moderno</h2>
+        <p class="section-subtitle">Tutte le funzionalità che ti servono</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            🎨
+          </div>
+          <h3 class="feature-title">Gradienti Premium</h3>
+          <p class="feature-description">
+            8 gradienti professionali pronti all'uso con ombre colorate e effetti glassmorphic.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            ✨
+          </div>
+          <h3 class="feature-title">Animazioni Fluide</h3>
+          <p class="feature-description">
+            Animazioni CSS avanzate con stagger timing, cubic-bezier e hover effects sofisticati.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            🚀
+          </div>
+          <h3 class="feature-title">Performance Ottimale</h3>
+          <p class="feature-description">
+            CSS puro senza framework. Caricamento veloce, zero dipendenze, 100% responsive.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            🎯
+          </div>
+          <h3 class="feature-title">Componenti Modulari</h3>
+          <p class="feature-description">
+            8 componenti riutilizzabili: navbar, hero, features, testimonials, pricing, contact, CTA, footer.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            💎
+          </div>
+          <h3 class="feature-title">Typography Premium</h3>
+          <p class="feature-description">
+            Sistema tipografico completo con Inter font, responsive scaling con clamp() e text gradients.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            🌈
+          </div>
+          <h3 class="feature-title">Design System</h3>
+          <p class="feature-description">
+            Variabili CSS complete per colori, spacing, shadows, transitions. Personalizzabile al 100%.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta" id="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">
+          Pronto a Creare Landing Page Incredibili?
+        </h2>
+        <p class="cta-text">
+          Scarica il kit completo con tutti i componenti, template e documentazione.
+          Inizia a creare oggi stesso.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-lg" style="background: white; color: #3b82f6;">
+            Download Gratuito
+          </button>
+          <button class="btn btn-outline btn-lg">
+            GitHub Repository
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <h3 class="footer-title">Vento Landing Page Kit</h3>
+        <p class="footer-text">
+          HTML/CSS/JS puro • Zero Dipendenze • 100% Responsive
+        </p>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Vento Bootcamp. Design Premium per il tuo successo.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+      } else {
+        navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+      }
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const navHeight = document.querySelector('.navbar').offsetHeight;
+          const targetPosition = target.offsetTop - navHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
