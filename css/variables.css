@@ -1,37 +1,67 @@
 /* ========================================
-   VARIABILI CSS - Personalizza qui i colori e gli stili
+   VARIABILI CSS - Palette Colori Premium
    ======================================== */
 
 :root {
-  /* Colori Primari */
-  --primary-color: #2563eb;
+  /* Colori Primari - Blu Moderno */
+  --primary-color: #3b82f6;
   --primary-dark: #1e40af;
-  --primary-light: #3b82f6;
+  --primary-light: #60a5fa;
+  --primary-50: #eff6ff;
+  --primary-100: #dbeafe;
+  --primary-900: #1e3a8a;
 
-  /* Colori Secondari */
-  --secondary-color: #7c3aed;
+  /* Colori Secondari - Viola Elegante */
+  --secondary-color: #8b5cf6;
   --secondary-dark: #6d28d9;
-  --secondary-light: #8b5cf6;
+  --secondary-light: #a78bfa;
+  --secondary-50: #f5f3ff;
+  --secondary-900: #4c1d95;
 
-  /* Colori Neutri */
-  --dark: #1f2937;
-  --dark-light: #374151;
-  --gray: #6b7280;
-  --gray-light: #9ca3af;
-  --light: #f3f4f6;
+  /* Colori Accent */
+  --accent-color: #ec4899;
+  --accent-dark: #be185d;
+  --accent-light: #f472b6;
+
+  /* Colori Neutri - Scala Grigio Premium */
+  --dark: #0f172a;
+  --dark-light: #1e293b;
+  --gray: #64748b;
+  --gray-light: #94a3b8;
+  --gray-lighter: #cbd5e1;
+  --light: #f8fafc;
+  --light-gray: #f1f5f9;
   --white: #ffffff;
 
   /* Colori di Stato */
   --success: #10b981;
+  --success-light: #34d399;
   --warning: #f59e0b;
+  --warning-light: #fbbf24;
   --error: #ef4444;
+  --error-light: #f87171;
   --info: #3b82f6;
+  --info-light: #60a5fa;
 
-  /* Typography */
-  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  /* Gradienti Premium */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-sunset: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --gradient-ocean: linear-gradient(135deg, #2e3192 0%, #1bffff 100%);
+  --gradient-purple: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  --gradient-blue: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --gradient-green: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+  --gradient-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+
+  /* Overlay Gradienti */
+  --overlay-gradient: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.8) 100%);
+
+  /* Typography - Font System */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Fira Code', 'Courier New', monospace;
 
-  /* Font Sizes */
+  /* Font Sizes - Sistema Tipografico Scalabile */
   --text-xs: 0.75rem;      /* 12px */
   --text-sm: 0.875rem;     /* 14px */
   --text-base: 1rem;       /* 16px */
@@ -42,8 +72,25 @@
   --text-4xl: 2.25rem;     /* 36px */
   --text-5xl: 3rem;        /* 48px */
   --text-6xl: 3.75rem;     /* 60px */
+  --text-7xl: 4.5rem;      /* 72px */
 
-  /* Spacing */
+  /* Font Weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Spacing - Sistema 8pt */
   --spacing-xs: 0.25rem;   /* 4px */
   --spacing-sm: 0.5rem;    /* 8px */
   --spacing-md: 1rem;      /* 16px */
@@ -52,24 +99,36 @@
   --spacing-2xl: 3rem;     /* 48px */
   --spacing-3xl: 4rem;     /* 64px */
   --spacing-4xl: 6rem;     /* 96px */
+  --spacing-5xl: 8rem;     /* 128px */
 
-  /* Border Radius */
-  --radius-sm: 0.25rem;    /* 4px */
+  /* Border Radius - Arrotondamenti Moderni */
+  --radius-sm: 0.375rem;   /* 6px */
   --radius-md: 0.5rem;     /* 8px */
   --radius-lg: 0.75rem;    /* 12px */
   --radius-xl: 1rem;       /* 16px */
+  --radius-2xl: 1.5rem;    /* 24px */
+  --radius-3xl: 2rem;      /* 32px */
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /* Shadows - Sistema di Elevazione */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 
-  /* Transitions */
-  --transition-fast: 150ms ease-in-out;
-  --transition-base: 300ms ease-in-out;
-  --transition-slow: 500ms ease-in-out;
+  /* Colored Shadows */
+  --shadow-primary: 0 10px 30px -5px rgba(59, 130, 246, 0.3);
+  --shadow-secondary: 0 10px 30px -5px rgba(139, 92, 246, 0.3);
+  --shadow-accent: 0 10px 30px -5px rgba(236, 72, 153, 0.3);
+
+  /* Transitions - Animazioni Fluide */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
   /* Container Width */
   --container-sm: 640px;
@@ -77,4 +136,25 @@
   --container-lg: 1024px;
   --container-xl: 1280px;
   --container-2xl: 1536px;
+
+  /* Z-Index Scale */
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  /* Backdrop Blur */
+  --backdrop-blur-sm: blur(4px);
+  --backdrop-blur-md: blur(8px);
+  --backdrop-blur-lg: blur(16px);
+  --backdrop-blur-xl: blur(24px);
 }
